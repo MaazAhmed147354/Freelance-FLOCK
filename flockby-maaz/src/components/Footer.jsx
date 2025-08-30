@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-gray-800 text-white text-center p-4 mt-6">
+    <footer className="bg-gray-800 text-white text-center p-4">
       <p>© {new Date().getFullYear()} FlockByMaaz. All Rights Reserved.</p>
     </footer>
   );

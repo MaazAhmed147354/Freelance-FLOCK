@@ -8,7 +8,7 @@ function App() {
     <Router>
       <div className="flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow p-6">
+        <main className="flex-grow mt-0">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/delivery" element={<Delivery />} />
