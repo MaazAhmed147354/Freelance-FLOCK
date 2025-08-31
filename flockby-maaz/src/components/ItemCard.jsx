@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ItemModal from "./Modals/ItemModal";
 
-const ItemCard = ({ image, name, description, price }) => {
+const ItemCard = ({ addToCart, image, name, description, price }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -10,11 +10,6 @@ const ItemCard = ({ image, name, description, price }) => {
     setSelectedItem(item);
     setQuantity(1);
     setModalOpen(true);
-  };
-
-  const handleAddToCart = (item, qty) => {
-    console.log("Added to cart:", item, "Qty:", qty);
-    // later connect with cart sidebar
   };
 
   return (
@@ -43,7 +38,7 @@ const ItemCard = ({ image, name, description, price }) => {
         description={description}
         image={image}
         setQuantity={setQuantity}
-        onAdd={handleAddToCart}
+        onAdd={addToCart}
       />
     </div>
   );

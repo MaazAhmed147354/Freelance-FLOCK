@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useCart } from "../../context/CartContext";
 
 const ItemModal = ({
   isOpen,
@@ -13,6 +14,13 @@ const ItemModal = ({
   onAdd,
 }) => {
   if (!isOpen || !item) return null;
+
+  const { addToCart } = useCart();
+
+  const handleAdd = () => {
+    addToCart({ ...item, qty: 1 });
+    onClose();
+  };
 
   return (
     <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
@@ -40,9 +48,7 @@ const ItemModal = ({
         {/* Item Details */}
         <h2 className="text-2xl font-bold text-red-500">{item}</h2>
         <p className="text-gray-600 my-2">{description}</p>
-        <p className="text-lg font-semibold text-gray-800 mb-4">
-          ${price}
-        </p>
+        <p className="text-lg font-semibold text-gray-800 mb-4">${price}</p>
 
         {/* Quantity Selector */}
         <div className="flex items-center gap-4 mb-6">
@@ -63,10 +69,7 @@ const ItemModal = ({
 
         {/* Add to Cart */}
         <button
-          onClick={() => {
-            onAdd(item, quantity);
-            onClose();
-          }}
+          onClick={handleAdd}
           className="w-full bg-green-600 text-white py-2 rounded-xl hover:bg-green-700 transition"
         >
           Add to Cart

@@ -24,7 +24,7 @@ const sampleItems = [
   },
 ];
 
-const Home = () => {
+const Home = ({addToCart}) => {
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -45,7 +45,7 @@ const Home = () => {
               <h2 className="text-2xl font-bold mb-6">{section}</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {sampleItems.map((item, index) => (
-                  <ItemCard key={index} {...item} />
+                  <ItemCard key={index} {...item} addToCart={addToCart}/>
                 ))}
               </div>
             </section>

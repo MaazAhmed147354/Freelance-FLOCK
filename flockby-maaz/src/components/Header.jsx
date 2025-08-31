@@ -3,10 +3,10 @@ import { MapPin, Phone, ShoppingCart } from "lucide-react";
 import LocationModal from "./Modals/LocationModal";
 import CartSidebar from "./CartSidebar";
 
-const Header = () => {
+const Header = ({cartItems, removeFromCart}) => {
   const [locationOpen, setLocationOpen] = useState(false);
-  const [cartOpen, setCartOpen] = useState(false);
   const [location, setLocation] = useState("");
+  const [cartOpen, setCartOpen] = useState(false);
 
   // Placeholder for future cart count from global state
   const cartCount = useMemo(() => 0, []);
@@ -72,7 +72,12 @@ const Header = () => {
         }}
       />
 
-      <CartSidebar isOpen={cartOpen} onClose={() => setCartOpen(false)} />
+      <CartSidebar
+        isOpen={cartOpen}
+        onClose={() => setCartOpen(false)}
+        cartItems={cartItems}
+        removeFromCart={removeFromCart}
+      />
     </>
   );
 };
