@@ -1,11 +1,12 @@
-export { default as Footer } from "./Footer";
+// Layout Components
 export { default as Header } from "./Header";
-// Home Page Components
-export { default as Hero } from "./HomeComponents/Hero";
-export { default as MenuPreview } from "./HomeComponents/MenuPreview";
-export { default as ReviewPreview } from "./HomeComponents/ReviewPreview";
-export { default as WhyChooseUs } from "./HomeComponents/WhyChooseUs";
-export { default as CTASection } from "./HomeComponents/CTASection";
-// Delivery Page Components
-export { default as MenuItem } from "./DeliveryComponents/MenuItem";
-export { default as Cart } from "./DeliveryComponents/Cart";
+export { default as Footer } from "./Footer";
+export { default as Navbar } from "./Navbar";
+// Basic Components
+export { default as CartSidebar } from "./CartSidebar";
+export { default as ItemCard } from "./ItemCard";
+export { default as ImageSlider } from "./ImageSlider";
+export { default as HeroSection } from "./HeroSection";
+// // Modal Components
+export { default as ItemModal } from "./Modals/ItemModal";
+export { default as LocationModal } from "./Modals/LocationModal";

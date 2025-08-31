@@ -1,23 +1,23 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Header, Footer } from "./components";
-
-import { Home, Delivery, Checkout, Account, Contact, Reviews } from "./pages";
+import { Home } from "./pages";
 
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-black text-white">
+        {/* Header always visible */}
         <Header />
-        <main className="flex-grow mt-0">
+
+        {/* Page content */}
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/delivery" element={<Delivery />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/account" element={<Account />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/reviews" element={<Reviews />} />
+            {/* <Route path="/checkout" element={<Checkout />} /> */}
           </Routes>
         </main>
+
+        {/* Footer always visible */}
         <Footer />
       </div>
     </Router>
